@@ -57,14 +57,14 @@ gsap.to("#nav", {
     },
   });
   gsap.from(".card", {
-    scale: 0.5,
-    duration: 2,
-    stagger: 0.3,
+    scale: 0.8,
+    duration: 1,
+    stagger: 0.1,
     scrollTrigger: {
       trigger: ".card",
       scroller: "body",
-      start: "top 100%",
-      end: "top 50%",
-      scrub: 2,
+      start: "top 70%",
+      end: "top 65%",
+      scrub: 1,
     },
   });
