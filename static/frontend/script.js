@@ -34,3 +34,13 @@ gsap.to("#nav", {
       scrub: 1,
     },
   });
+  gsap.to("#main", {
+    backgroundColor: "#000",
+    scrollTrigger: {
+      trigger: "#main",
+      scroller: "body",
+      start: "top -25%",
+      end: "top -70%",
+      scrub: 2,
+    },
+  });
