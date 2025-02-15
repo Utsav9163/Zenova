@@ -296,51 +296,25 @@ video {
 .card:hover {
   transform: rotate3d(-1, 1, 0, 20deg);
 }
-#page3 .container {
-  height: 90vh;
-  width: 90%;
-  margin: 0 auto;
-  font-family: sans-serif;
+#green-div {
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+  background: linear-gradient(to left bottom, #119f3a, #ace022);
 }
-
-#page3 .scrolling-wrapper {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding-bottom: 20px; /* Added padding to avoid scrollbar overlay */
+#green-div h4 {
+  width: 45%;
+  line-height: 50px;
+  color: #000;
+  text-align: center;
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
 }
-
-#page3 .card {
-  display: inline-block;
-  background-color: #f0f0f0;
-  width: 33%;
-  margin: 10px;
-  height: 85vh;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
-}
-
-#page3 .card h2 {
-  margin-top: 0;
-  font-size: 1.5em;
-}
-
-#page3 .card p {
-  margin-bottom: 10px;
-}
-
-/* Optional: Style the scrollbar */
-#page3 .scrolling-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
-#page3 .scrolling-wrapper::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 4px;
-}
-
-#page3 .scrolling-wrapper::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+#green-div img {
+  height: 100%;
+  object-fit: cover;
+  width: 14%;
 }
