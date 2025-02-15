@@ -68,3 +68,25 @@ gsap.to("#nav", {
       scrub: 1,
     },
   });
+  gsap.from("#colon1", {
+    y: -70,
+    x: -70,
+    scrollTrigger: {
+      trigger: "#colon1",
+      scroller: "body",
+      start: "top 50%",
+      end: "top 75%",
+      scrub: 3,
+    },
+  });
+  gsap.from("#colon2", {
+    y: 70,
+    x: 70,
+    scrollTrigger: {
+      trigger: "#colon1",
+      scroller: "body",
+      start: "top 100%",
+      end: "top 50%",
+      scrub: 2,
+    },
+  });
