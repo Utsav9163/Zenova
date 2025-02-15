@@ -29,7 +29,3 @@
       }
     ]
   }
-   {
-    "src": "/",
-    "dest": "/public/templates/index.html"
-   },
