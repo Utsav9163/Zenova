@@ -325,10 +325,16 @@ video {
 #page3 .card h2 {
   margin-top: 0;
   font-size: 1.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #page3 .card p {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 /* Optional: Style the scrollbar */
