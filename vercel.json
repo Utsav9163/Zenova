@@ -17,11 +17,11 @@
       },
   {
         "src": "/",
-        "dest": "/public/templates/index.html"
+        "dest": "/public/index.html"
       },
           {
         "src": "/chatbot",
-        "dest": "/public/templates/chatbot.html"
+        "dest": "/public/chatbot.html"
       },
       {
         "src": "/(.*)",
