@@ -14,7 +14,7 @@ body {
 }
 *::selection {
   background-color: #fff;
-  color: #95c11e;
+  color: #9710bc;
 }
 
 body::-webkit-scrollbar {
@@ -52,7 +52,6 @@ body {
 #nav {
   height: 130px;
   width: 100%;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   padding: 0 120px;
@@ -105,7 +104,7 @@ video {
   color: #000;
   top: -5px;
   left: -5px;
-  -webkit-text-stroke: 1.5px #da500b;
+  -webkit-text-stroke: 1.5px #9710bc;
   z-index: -1;
 }
 #page1 h2 {
@@ -143,7 +142,7 @@ video {
   height: 250px;
   width: 250px;
   background-color: transparent;
-  border: 2px solid #95c11e;
+  border: 2px solid #9710bc;
   position: absolute;
   display: flex;
   left: -2%;
@@ -212,7 +211,6 @@ video {
 #about-us {
   height: 40vh;
   width: 100%;
-  /* background-color: red; */
   display: flex;
   padding: 0 50px;
   align-items: center;
@@ -240,7 +238,6 @@ video {
   line-height: 26px;
 }
 #cards-container {
-  /* background-color: red; */
   height: 60vh;
   display: flex;
   align-items: center;
@@ -252,7 +249,6 @@ video {
 .card {
   height: 80%;
   width: 24%;
-  /* background-color: blue; */
   border-radius: 20px;
   background-size: cover;
   background-position: center;
@@ -275,23 +271,24 @@ video {
 .overlay {
   height: 100%;
   width: 100%;
-  background-color: #95c11e;
   padding: 30px;
   padding-top: 160px;
   opacity: 0;
   transition: all ease 0.6s;
 }
 .overlay h4 {
-  color: #000;
-  font-size: 40px;
+  color: #e8e41b;
+  font-size: 25px;
   text-transform: uppercase;
   white-space: nowrap;
   margin-bottom: 20px;
   font-weight: 800;
+  text-align: center;
 }
 .overlay p {
-  color: #000;
-  font-size: 18px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
 }
 .card:hover .overlay {
   opacity: 1;
