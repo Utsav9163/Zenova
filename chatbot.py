@@ -34,9 +34,11 @@ def get_gemini_response(prompt):
     # except Exception as e:
     #     print(f"Error calling Gemini API: {e}")
     #     yield "I'm sorry, I encountered an error. Please try again later." # Yield an error message
-
-@app.route("/")
+@app.route("/")  # Landing page route
 def index():
+    return render_template("index.html")
+@app.route("/chatbot")  # Chatbot page route
+def chatbot_page():
     return render_template("chatbot.html")  # Render the HTML page
 
 @app.route("/get_response", methods=["POST"])
