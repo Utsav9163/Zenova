@@ -2,15 +2,26 @@
     "version": 2,
     "builds": [
       {
-        "src": "api/app.py",
+        "src": "api/chatbot.py",  
         "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+        "config": {
+          "maxLambdaSize": "15mb",
+          "runtime": "python3.9"
+        }
       }
     ],
     "routes": [
       {
-        "src": "/api/.*",
-        "dest": "api/app.py"
+        "src": "/api/get_response",
+        "dest": "api/chatbot.py"  
+      },
+  {
+        "src": "/",
+        "dest": "/public/templates/index.html"
+      },
+          {
+        "src": "/chatbot",
+        "dest": "/public/templates/chatbot.html"
       },
       {
         "src": "/(.*)",

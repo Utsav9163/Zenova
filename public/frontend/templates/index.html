@@ -13,7 +13,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='frontend/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="/static/frontend/style.css">
   </head>
 
   <body><nav>
@@ -25,13 +25,13 @@
       <h4>Home</h4>
       <h4>Meet the Zenova's</h4>
       <h4>Blogs</h4>
-      <h4><a href="\chatbot">Chatbot</a></h4>
+      <h4><a href="/chatbot">Chatbot</a></h4>
     </nav>
     </div>
     <div id="cursor"></div>
     <div id="cursor-blur"></div>
 
-    <video autoplay loop muted src="{{ url_for('static', filename='frontend/bg_vid.mp4') }}"></video>
+    <video autoplay loop muted src="/static/frontend/bg_vid.mp4"></video>
     <div id="main">
       <div id="page1">
         <h1>Grow. Stronger. Within.
@@ -66,7 +66,7 @@
         </div>
         
         <div id="about-us">
-          <img src="{{ url_for('static', filename='frontend/Utsav.jpg') }}" alt="">
+          <img src="/static/frontend/Utsav.jpg" alt="">
             <div id="about-us-in">
               <h3>ABOUT US</h3>
               <p>
@@ -75,7 +75,7 @@
                 to revolutionize the way people access and engage with mental healthcare.
               </p>
             </div>
-            <img src="{{ url_for('static', filename='frontend/Sumit_processed.jpeg') }}" alt="">
+            <img src="/static/frontend/Sumit_processed.jpeg" alt="">
           </div>
           <div id="cards-container">
             <div class="card" id="card1">
@@ -131,6 +131,6 @@
       integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
       crossorigin="anonymous"
     ></script>
-    <script src="{{ url_for('static', filename='frontend/script.js') }}"></script>
+    <script src="/static/frontend/script.js"></script>
   </body>
 </html>

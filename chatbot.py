@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables (for local development)
 
-app = Flask(__name__, static_folder='public', template_folder='public')
+chatbot = Flask(__name__, static_folder='public', template_folder='public/templates')
 
 # Configure Gemini API (make sure GOOGLE_API_KEY is set in Vercel or .env)
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
@@ -28,21 +28,21 @@ def get_gemini_response(prompt):
         return "I'm sorry, I encountered an error. Please try again later."
 
 # Serve static files (CSS, JavaScript, images) from the 'public' directory
-@app.route('/<path:path>')
+@chatbot.route('/<path:path>')
 def serve_static(path):
     return send_from_directory('public', path)
 
 # Serve the index.html file (landing page)
-@app.route("/")
+@chatbot.route("/")
 def index():
-    return send_from_directory('public', 'index.html')
+    return render_template("index.html")
 
 # Chatbot page route - Serve chatbot.html from the 'public' directory
-@app.route("/chatbot")
+@chatbot.route("/chatbot")
 def chatbot_page():
-    return send_from_directory('public', 'chatbot.html')
+    return render_template("chatbot.html")
 
-@app.route("/api/get_response", methods=["POST"]) #Updated Endpoint
+@chatbot.route("/api/get_response", methods=["POST"]) #Updated Endpoint
 def get_response():
     if model is None:
         return jsonify({"response": "Sorry, the chatbot is currently unavailable."}) #Return a default message if key not found
@@ -53,4 +53,4 @@ def get_response():
 
 # This part is ONLY for LOCAL development. Vercel ignores it.
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)  # Enable debug mode for development
+    chatbot.run(debug=True, port=5000)  # Enable debug mode for development
