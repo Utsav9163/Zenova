@@ -74,9 +74,9 @@ gsap.to("#nav", {
     scrollTrigger: {
       trigger: "#colon1",
       scroller: "body",
-      start: "top 50%",
-      end: "top 75%",
-      scrub: 3,
+      start: "top 55%",
+      end: "top 45%",
+      scrub: 4,
     },
   });
   gsap.from("#colon2", {
@@ -85,8 +85,8 @@ gsap.to("#nav", {
     scrollTrigger: {
       trigger: "#colon1",
       scroller: "body",
-      start: "top 100%",
-      end: "top 50%",
-      scrub: 2,
+      start: "top 55%",
+      end: "top 45%",
+      scrub: 4,
     },
   });
