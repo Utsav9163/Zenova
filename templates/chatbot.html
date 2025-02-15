@@ -2,34 +2,24 @@
 <html>
 <head>
     <title>Zenova - Mental Health Chatbot</title>
-    <style>
-    body {
-        font-family: sans-serif;
-        margin: 20px;
-    }
-    #chatbox {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 10px;
-        height: 300px;
-        overflow-y: scroll; /* Add scroll for long conversations */
-    }
-    #user_input {
-        width: 80%;
-        padding: 8px;
-        margin-right: 10px;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='frontend/chatbot.css') }}">
 </head>
 <body>
     <h1>Zenova - Your Mental Health Chatbot</h1>
 
     <div id="chatbox">
-        <p>Welcome! How can I help you today?</p>
+        <p>Want to Share something !</p>
     </div>
 
-    <input type="text" id="user_input" placeholder="Type your message...">
+    <input type="text" id="user_input" placeholder="Share your thoughts..." />
     <button onclick="sendMessage()">Send</button>
+    <script>
+        document.getElementById("user_input").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+    </script>
 
     <script>
         function sendMessage() {

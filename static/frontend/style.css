@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "montserrat";
-  color: #fff;
+  
 }
 
 html,
@@ -50,16 +50,15 @@ body {
   transition: all linear 0.4s;
 }
 #nav {
-  height: 130px;
+  height: 75px;
   width: 100%;
-  /* background-color: red; */
   display: flex;
-  align-items: center;
-  padding: 0 120px;
+  align-items: right;
+  padding: 45px 60px;
   gap: 50px;
-  position: fixed;
-  justify-content: flex-start;
-  z-index: 999;
+  justify-content: right;
+  z-index: 5;
+  background-color: transparent;
 }
 #nav img {
   height: 4.5vw;
@@ -95,18 +94,11 @@ video {
   z-index: 10;
 }
 #page1 h1 {
-  font-size: 6vw;
+  font-size: 10vw;
   font-weight: 900;
   position: relative;
-}
-#page1 h1::before {
-  content: "Grow. Stronger. Within.";
-  position: absolute;
-  color: #000;
-  top: -5px;
-  left: -5px;
-  -webkit-text-stroke: 1.5px #da500b;
-  z-index: -1;
+  color: #f0f0f0;
+  border-radius: 20%;
 }
 #page1 h2 {
   font-size: 50px;
@@ -119,6 +111,7 @@ video {
   font-size: 1.7vw;
   font-weight: 800;
   width: 40%;
+  color: rgb(188, 215, 239);
 }
 #page1 h3::before {
   content: "Welcome To Zenova !";
@@ -136,7 +129,7 @@ video {
   font-size: 1.4vw;
   font-weight: 500;
   width: 60%;
-  color: #000;
+  color: #f6eaea;
 }
 
 #page1 #arrow {
