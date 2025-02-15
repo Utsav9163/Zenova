@@ -56,3 +56,15 @@ gsap.to("#nav", {
       scrub: 1,
     },
   });
+  gsap.from(".card", {
+    scale: 0.5,
+    duration: 2,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: ".card",
+      scroller: "body",
+      start: "top 100%",
+      end: "top 50%",
+      scrub: 2,
+    },
+  });
