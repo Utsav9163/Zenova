@@ -44,3 +44,15 @@ gsap.to("#nav", {
       scrub: 2,
     },
   });
+  gsap.from("#about-us img,#about-us-in", {
+    y: 90,
+    opacity: 0,
+    duration: 2,
+    scrollTrigger: {
+      trigger: "#about-us",
+      scroller: "body",
+      start: "top 100%",
+      end: "top 50%",
+      scrub: 2,
+    },
+  });
