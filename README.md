@@ -1,16 +1,21 @@
-# Zenova
-Zenova is a mental health platform combining a chatbot and blog to offer support, self-care tips, and expert-backed insights. The chatbot provides empathetic conversations, stress management tips, and mindfulness exercises, while the blog features professional advice and real-life stories. 
 # Zenova ✨
-
 Zenova ✨: Find Your Calm !✅
-
+* Hackathon - DoubleSlash 3.0 at Jadavpur University, conducted by IEEE branch of JU.
+* Team Name- //hackers
+* Team Member 1- UTSAV KUMAR GUPTA[Lead]
+* Team Member 2- SUMIT CHATTERJEE
+* Zenova is a mental health platform combining a chatbot and blog to offer support, self-care tips, and expert-backed insights. The chatbot provides empathetic conversations, stress management tips, and mindfulness exercises, while the blog features professional advice and real-life stories. 
 
 # About this project 🚀
 This is a sample project of creating a Health website to deliver its service for Individuals navigating life transitions.
 
 # How it looks 📷
 
+![Image](https://github.com/user-attachments/assets/7853e8ee-4168-4a84-9459-391f1067f01f)
 
+![Image](https://github.com/user-attachments/assets/0fe4cb5a-6e39-4932-ab67-ef2e8a7886e5)
+
+![Image](https://github.com/user-attachments/assets/c6be8e91-19bf-4347-a796-9d47ab2c9dec)
 
 <br>
 It consists of sections in the home page like -Home tab, Chatbot, Meet the Zenova's, Blogs . Finally about the Chatbot followed by quick links of the page.
@@ -31,9 +36,9 @@ It consists of sections in the home page like -Home tab, Chatbot, Meet the Zenov
 # 🚀 Setup/Installation Requirements
 
 To view the website, 
-* click [Zenovas]()
+* click [Zenova]()
 or 
-* copy the link(https://github.com/Utsav9163/Zenovas) paste it to your browser and load it.  
+* copy the link(https://github.com/Utsav9163/Zenova) paste it to your browser and load it.  
 
 # 🛠 Built With 💚
 
@@ -52,8 +57,6 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 
 # ⭐️ Show your support ⭐
-
-# ⭐️ Show your support ⭐️
 
 
 Give a ⭐️ if you like this project!
@@ -77,9 +80,4 @@ Give a ⭐️ if you like this project!
      <p align="center">
     <a href="https://www.instagram.com/sumit__chatterjee?igsh=MWw3dXJhNmZsaGdxZQ==" target="_blank">Instagram</a>
   </p>
-     <p align="center">
     
-  </p>
-     <p align="center">
-    <a href="" target="_blank">Instagram</a>
-  </p>
