@@ -48,5 +48,5 @@ def get_response():
     gemini_response = get_gemini_response(prompt)
     return jsonify({"response": gemini_response}) # Send the response back as JSON
 
-#if __name__ == "__main__":
-#    app.run(debug=True)  # Enable debug mode for development
+if __name__ == "__main__":
+    app.run(debug=True)  # Enable debug mode for development
