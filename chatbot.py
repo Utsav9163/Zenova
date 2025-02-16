@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables (for local development)
 
-chatbot = Flask(__name__, static_folder='public', template_folder='public/templates')
+chatbot = Flask(__name__, template_folder='templates')
 
 # Configure Gemini API (make sure GOOGLE_API_KEY is set in Vercel or .env)
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
@@ -26,11 +26,6 @@ def get_gemini_response(prompt):
     except Exception as e:
         print(f"Error calling Gemini API: {e}")
         return "I'm sorry, I encountered an error. Please try again later."
-
-# Serve static files (CSS, JavaScript, images) from the 'public' directory
-@chatbot.route('/<path:path>')
-def serve_static(path):
-    return send_from_directory('public', path)
 
 # Serve the index.html file (landing page)
 @chatbot.route("/")
