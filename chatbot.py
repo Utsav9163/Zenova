@@ -44,9 +44,9 @@ def chatbot_page():
 @app.route("/get_response", methods=["POST"])
 def get_response():
     user_message = request.form["user_message"]
-    prompt = f"You are a supportive mental health chatbot named Zenova. A user says: '{user_message}'. Respond in a helpful and empathetic way. If you are unable to answer a question, respond with 'Sorry, I don't have an answer to that.'"
+    prompt = f"You are a supportive mental health chatbot named Zenova. A user says: '{user_message}'. Respond in a helpful and empathetic way. If the message is not related to mental health, respond with 'Sorry, I can only assist with mental health-related queries.'"
     gemini_response = get_gemini_response(prompt)
     return jsonify({"response": gemini_response}) # Send the response back as JSON
 
-if __name__ == "__main__":
-    app.run(debug=True)  # Enable debug mode for development
+#if __name__ == "__main__":
+#    app.run(debug=True)  # Enable debug mode for development
