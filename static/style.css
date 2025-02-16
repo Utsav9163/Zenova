@@ -57,7 +57,7 @@ body {
   transition: all linear 0.4s;
 }
 #nav {
-  height: 130px;
+  height: 150px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -368,6 +368,7 @@ video {
   overflow: hidden;
   border-radius: 20px;
   position: relative;
+  color: #fff;
 }
 
 .elem h2 {
