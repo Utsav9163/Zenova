@@ -1,25 +1,18 @@
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables (for local development)
+load_dotenv()
 
-app = Flask(__name__, static_folder='public', template_folder='public')
+app = Flask(__name__)
 
-# Configure Gemini API (make sure GOOGLE_API_KEY is set in Vercel or .env)
-GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
-if GOOGLE_API_KEY:
-    genai.configure(api_key=GOOGLE_API_KEY)
-    model = genai.GenerativeModel('gemini-pro')
-else:
-    print("WARNING: GOOGLE_API_KEY not found. Chatbot functionality will be disabled.")
-    model = None  # Disable the model if no key is found
+# Configure Gemini API (make sure GOOGLE_API_KEY is set in your environment)
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
+model = genai.GenerativeModel('gemini-pro')
 
 def get_gemini_response(prompt):
     """Gets a response from the Gemini API."""
-    if model is None:
-        return "Sorry, the chatbot is currently unavailable. Please check back later." #Return a default message if key not found
     try:
         response = model.generate_content(prompt)
         return response.text
@@ -27,30 +20,33 @@ def get_gemini_response(prompt):
         print(f"Error calling Gemini API: {e}")
         return "I'm sorry, I encountered an error. Please try again later."
 
-# Serve static files (CSS, JavaScript, images) from the 'public' directory
-@app.route('/<path:path>')
-def serve_static(path):
-    return send_from_directory('public', path)
-
-# Serve the index.html file (landing page)
-@app.route("/")
+    # **Streaming Example (Requires Frontend Changes):**
+    #   For longer responses, streaming significantly improves perceived speed.
+    #   This involves:
+    #     1.  Using `model.generate_content(prompt, stream=True)`
+    #     2.  Iterating through the `response.parts` (each part is a chunk of text)
+    #     3.  Sending each chunk to the frontend via Server-Sent Events or WebSockets
+    #   The frontend needs to be adapted to handle the streamed data.
+    # try:
+    #     response = model.generate_content(prompt, stream=True)
+    #     for chunk in response:
+    #         yield chunk.text  # Yield chunks to the frontend (SSE or WebSockets)
+    # except Exception as e:
+    #     print(f"Error calling Gemini API: {e}")
+    #     yield "I'm sorry, I encountered an error. Please try again later." # Yield an error message
+@app.route("/")  # Landing page route
 def index():
-    return send_from_directory('public', 'index.html')
-
-# Chatbot page route - Serve chatbot.html from the 'public' directory
-@app.route("/chatbot")
+    return render_template("index.html")
+@app.route("/chatbot")  # Chatbot page route
 def chatbot_page():
-    return send_from_directory('public', 'chatbot.html')
+    return render_template("chatbot.html")  # Render the HTML page
 
-@app.route("/api/get_response", methods=["POST"]) #Updated Endpoint
+@app.route("/get_response", methods=["POST"])
 def get_response():
-    if model is None:
-        return jsonify({"response": "Sorry, the chatbot is currently unavailable."}) #Return a default message if key not found
     user_message = request.form["user_message"]
-    prompt = f"You are a supportive mental health chatbot named Zenova. A user says: '{user_message}'. Respond in a helpful and empathetic way. If you are unable to answer a question, respond with 'Sorry, I don't have an answer to that.'"
+    prompt = f"You are a supportive mental health chatbot named Zenova. A user says: '{user_message}'. Respond in a helpful and empathetic way. If the message is not related to mental health, respond with 'Sorry, I can only assist with mental health-related queries.'"
     gemini_response = get_gemini_response(prompt)
     return jsonify({"response": gemini_response}) # Send the response back as JSON
 
-# This part is ONLY for LOCAL development. Vercel ignores it.
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)  # Enable debug mode for development
+    app.run(debug=True)  # Enable debug mode for development
