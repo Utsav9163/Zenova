@@ -9,13 +9,7 @@ Zenova ✨: Find Your Calm !✅
 # About this project 🚀
 This is a sample project of creating a Health website to deliver its service for Individuals navigating life transitions.
 
-# How it looks 📷
 
-![Image](https://github.com/user-attachments/assets/7853e8ee-4168-4a84-9459-391f1067f01f)
-
-![Image](https://github.com/user-attachments/assets/0fe4cb5a-6e39-4932-ab67-ef2e8a7886e5)
-
-![Image](https://github.com/user-attachments/assets/c6be8e91-19bf-4347-a796-9d47ab2c9dec)
 
 <br>
 It consists of sections in the home page like -Home tab, Chatbot, Meet the Zenova's, Blogs . Finally about the Chatbot followed by quick links of the page.
